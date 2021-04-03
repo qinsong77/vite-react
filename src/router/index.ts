@@ -38,21 +38,18 @@ const routes = [
         path: '/chat',
         exact: false,
         auth: true,
-        component: import(/* webpackChunkName: "chat", webpackPrefetch: true */ '../views/chat'),
+        component: lazy(() => import('../views/chat')),
+        // component: import(/* webpackChunkName: "chat", webpackPrefetch: true */ '../views/chat'),
         subs: [
             {
                 path: '/chat/message',
                 title: 'message',
-                component: import(
-                    /* webpackChunkName: "chat", webpackPrefetch: true */ '../views/chat/Message'
-                )
+                component: lazy(() => import('../views/chat/Message'))
             },
             {
                 path: '/chat/contact',
                 title: 'contact',
-                component: import(
-                    /* webpackChunkName: "chat", webpackPrefetch: true */ '../views/chat/contact'
-                )
+                component: lazy(() => import('../views/chat/contact'))
             }
         ]
     },
