@@ -30,7 +30,13 @@ export const getUserDetail = (id) => {
 	})
 }
 
-export const getUsers = (params) => {
+interface queryParams {
+	current: number,
+	pageSize: number,
+	name?: string
+}
+
+export const getUsers = (params: queryParams) => {
 	return axios.request({
 		url: '/users/list',
 		method: 'get',
@@ -92,6 +98,14 @@ export const uploadFile = (data) => {
 	return axios.request({
 		url: '/user/uploadFile',
 		headers: { "Content-Type": "multipart/form-data" },
+		method: 'post',
+		data
+	})
+}
+
+export const uploadFileMerge = (data) => {
+	return axios.request({
+		url: '/user/uploadFile/merge',
 		method: 'post',
 		data
 	})

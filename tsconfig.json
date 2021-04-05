@@ -24,6 +24,7 @@
     "baseUrl": ".",
     "paths": { // 配合webpack resolve alias
       "~/*": ["./*"],
+      "@src/*": ["./src/*"],
       "@api": ["./src/api"],
       "@config": ["./src/config"],
       "@api/*": ["./src/api/*"],

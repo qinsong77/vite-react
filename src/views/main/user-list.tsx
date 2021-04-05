@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Card, Table, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 import { getUsers, getUserDetail } from '@api'
-import useData from '../../store/useData'
+import useData from '@src/store/useData'
 
 export default function () {
 	

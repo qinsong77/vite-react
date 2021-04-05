@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react'
 
-function useData(getData) {
+export type APIFunc<T, P> = (params: P) => Promise<T>
+
+interface UseData {
+	data: any,
+	pagination: {
+		total: number,
+		current: number,
+		pageSize: number
+	},
+	loading: boolean
+}
+
+function useData<P>(getData: P): [UseData, Function] {
 	const [data, setData] = useState({
 		data: [],
 		loading: true,

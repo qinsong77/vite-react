@@ -83,6 +83,12 @@ const routes = [
                 ]
             },
             {
+                path: '/main/fileUpload',
+                title: 'fileUpload',
+                icon: 'CloudUploadOutlined',
+                component: lazy(() => import('../views/main/fileUpload'))
+            },
+            {
                 path: '/main/test',
                 title: '测试管理',
                 icon: 'RadarChartOutlined',

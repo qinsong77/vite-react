@@ -2,8 +2,8 @@ import React, { useState} from 'react'
 
 class App extends React.Component {
 	
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = { val: 0 }
 	}
 	

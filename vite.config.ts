@@ -11,7 +11,7 @@ export default defineConfig({
         // 支持内联 JavaScript
         javascriptEnabled: true,
         // 自动导入全局样式
-        additionalData: "@import '@/styles/variable.less';"
+        additionalData: "@import '@src/styles/variable.less';"
       }
     }
   },
@@ -22,7 +22,7 @@ export default defineConfig({
       libList: [
         {
           libName: "antd",
-          style: (name) => `antd/lib/${name}/style/index.less`,
+          style: (name) => `antd/es/${name}/style`
         },
       ],
     })
@@ -30,7 +30,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~': path.resolve(__dirname, './'), // 根路径
-      '@': path.resolve(__dirname, 'src'), // src 路径
+      '@src': path.resolve(__dirname, 'src'), // src 路径
       '@api': path.resolve(__dirname, 'src/api'), // src 路径
       '@components': path.resolve(__dirname, 'src/components'), // src/api 路径
       '@common': path.resolve(__dirname, 'src/common'), // src/common 路径
