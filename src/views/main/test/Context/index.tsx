@@ -2,29 +2,42 @@ import React from 'react'
 import { ThemeContext, themes } from './theme-context'
 import ThemedButton from './themed-button'
 
-function Toolbar(props) {
+type Props = {
+	changeTheme: () => void
+}
+
+function Toolbar({ changeTheme }: Props) {
 	return (
-		<ThemedButton onClick={props.changeTheme}>
+		<ThemedButton onClick={changeTheme}>
 			Change Theme
 		</ThemedButton>
 	)
 }
 
+type State = {
+	theme: {
+		foreground: string,
+		background: string
+	}
+}
+
 class App extends React.Component {
+	
+	state: State = {
+		theme: themes.light
+	}
+	
 	constructor(props) {
 		super(props)
-		this.state = {
-			theme: themes.light,
-		}
-		
-		this.toggleTheme = () => {
-			this.setState(state => ({
-				theme:
-					state.theme === themes.dark
-						? themes.light
-						: themes.dark,
-			}))
-		}
+	}
+	
+	toggleTheme = () => {
+		this.setState(state => ({
+			theme:
+				state.theme === themes.dark
+					? themes.light
+					: themes.dark,
+		}))
 	}
 	
 	render() {

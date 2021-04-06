@@ -1,12 +1,19 @@
-import React, { useState} from 'react'
+import React from 'react'
+
+type State = {
+	val: number
+}
 
 class App extends React.Component {
-	
+
+	state: State = {
+		val: 0
+	}
+
 	constructor(props) {
 		super(props)
-		this.state = { val: 0 }
 	}
-	
+
 	increment = () => {
 		this.setState({ val: this.state.val + 1 })
 		console.log(this.state.val) // 输出的是更新前的val --> 0
@@ -19,5 +26,6 @@ class App extends React.Component {
 		)
 	}
 }
+
 
 export default App
