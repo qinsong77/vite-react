@@ -104,19 +104,24 @@ const routes = [
                     	component: lazy(() => import('../views/main/test/two'))
                     },
                     {
-                    	path: '/main/test/context',
-                    	title: 'context',
-                    	component: lazy(() => import('../views/main/test/Context'))
-                    },
-                    {
                         path: '/main/test/three',
                         title: 'test-3',
                         component: lazy(() => import('../views/main/test/three'))
                     },
                     {
+                        path: '/main/test/context',
+                        title: 'context',
+                        component: lazy(() => import('../views/main/test/Context'))
+                    },
+                    {
                         path: '/main/test/keep-alive',
                         title: 'keep-alive',
                         component: lazy(() => import('../views/main/test/Keep-Alive'))
+                    },
+                    {
+                        path: '/main/test/virtual-list',
+                        title: 'virtual-list',
+                        component: lazy(() => import('../views/main/test/Virtual-List'))
                     }
                 ]
             },

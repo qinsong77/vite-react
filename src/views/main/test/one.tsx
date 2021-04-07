@@ -17,13 +17,19 @@ function Button(props) {
 
 // 4种绑定this
 
+type State = {
+  num: number,
+  title: string
+}
+
 class App extends React.Component {
+    state: State = {
+      num: 1,
+      title: ' react study'
+    }
+    handleClick2: (e: MouseEvent | React.MouseEvent ) => void
     constructor(props) {
         super(props);
-        this.state = {
-            num: 1,
-            title: ' react study'
-        }
         this.handleClick2 = this.handleClick1.bind(this);
     }
 

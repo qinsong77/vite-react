@@ -55,7 +55,7 @@ function KeepAlive(props) {
 	useEffect(() => {
 		const init = async ({id, children}) => {
 			const realContent = await keep(id, children)
-			if (ref.current) {
+			if (ref.current && ref.current.appendChild) {
 				ref.current.appendChild(realContent)
 			}
 		}
