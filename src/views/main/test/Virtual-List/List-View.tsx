@@ -1,8 +1,8 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from "react"
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './list-view.less'
 import { Data } from './index'
 
-function throttle (fn, wait = 50) {
+function throttle(fn, wait = 50) {
 	let timer = null
 	return function () {
 		const args = arguments
@@ -22,10 +22,10 @@ type Props = {
 	render: (item: Data) => React.ReactNode
 }
 
-function ListView({ data, itemHeight = 30, render}: Props) {
+function ListView({ data, itemHeight = 30, render }: Props) {
 	
-	const [items, setItems ] = useState<Data []>([])
-	const [transX, setTransX ] = useState<number>(0)
+	const [items, setItems] = useState<Data []>([])
+	const [transX, setTransX] = useState<number>(0)
 	
 	const contentHeight = useMemo(() => {
 		return data.length * itemHeight + 'px'
@@ -38,7 +38,7 @@ function ListView({ data, itemHeight = 30, render}: Props) {
 	useEffect(() => {
 		const visibleCount = Math.ceil(ref.current.clientHeight / itemHeight)
 		setItems(data.slice(0, visibleCount))
-	},[])
+	}, [])
 	
 	
 	function updateVisibleData() {
@@ -56,8 +56,8 @@ function ListView({ data, itemHeight = 30, render}: Props) {
 			<div className='list-view-phantom' style={{ height: contentHeight }}/>
 			<div
 				className='list-view-content'
-				style={{ transform: `translate3d(0, ${transX}px, 0)`}}>
-				{ items.map(item => <div className='list-view-item' key={item.id}>{  render(item) }</div>)}
+				style={{ transform: `translate3d(0, ${transX}px, 0)` }}>
+				{items.map(item => <div className='list-view-item' key={item.id}>{render(item)}</div>)}
 			</div>
 		</div>
 	)

@@ -25,12 +25,6 @@ function App() {
 						<Counter/>
 					</KeepAlive>
 				)}
-				<hr/>
-				{show && (
-					<KeepAlive id='Test2'>
-						<Counter/>
-					</KeepAlive>
-				)}
 			</div>
 		</AliveScope>
 	)
