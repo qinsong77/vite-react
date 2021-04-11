@@ -9,4 +9,5 @@ export const debounce = () => {
 }
 
 export const validateFile = (file: File) => {
+
 }
