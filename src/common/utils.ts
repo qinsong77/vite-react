@@ -7,3 +7,6 @@ export const formatDate = (date, template = 'YYYY-MM-DD HH:mm:ss') => {
 export const debounce = () => {
 
 }
+
+export const validateFile = (file: File) => {
+}

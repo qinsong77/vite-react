@@ -93,19 +93,27 @@ export const agreeAddFriend = (data) => {
 	})
 }
 
-
-export const uploadFile = (data) => {
+export const upload = (data) => {
 	return axios.request({
-		url: '/user/uploadFile',
+		url: '/user/upload',
 		headers: { "Content-Type": "multipart/form-data" },
 		method: 'post',
 		data
 	})
 }
 
-export const uploadFileMerge = (data) => {
+export const splitUpload = (data) => {
 	return axios.request({
-		url: '/user/uploadFile/merge',
+		url: '/user/splitUpload',
+		headers: { "Content-Type": "multipart/form-data" },
+		method: 'post',
+		data
+	})
+}
+
+export const splitUploadMerge = (data) => {
+	return axios.request({
+		url: '/user/splitUpload/merge',
 		method: 'post',
 		data
 	})
