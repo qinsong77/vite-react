@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { Input, message, Modal, Upload } from 'antd'
 
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
-import { editUser, uploadFile } from '@api'
+import { editUser, upload } from '@api'
 import config from '@config'
 import Context from './context'
 
@@ -107,7 +107,7 @@ function EditUserInfoModal(props) {
 		
 		const formData = new FormData()
 		formData.append('file', file)
-		uploadFile(formData)
+		upload(formData)
 			.then(res => {
 				setUploading(false)
 				setState({

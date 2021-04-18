@@ -89,6 +89,18 @@ const routes = [
                 component: lazy(() => import('../views/main/fileUpload'))
             },
             {
+                path: '/main/redux-demo',
+                title: 'redux-demo',
+                icon: 'BulbOutlined',
+                subs: [
+                    {
+                        path: '/main/redux-demo/one',
+                        title: 'demo1',
+                        component: lazy(() => import('../views/main/redux-demo'))
+                    }
+                ]
+            },
+            {
                 path: '/main/test',
                 title: '测试管理',
                 icon: 'RadarChartOutlined',

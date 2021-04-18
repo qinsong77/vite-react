@@ -4,12 +4,13 @@ import { Switch, withRouter, Route, Redirect } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb } from 'antd'
 // import * as Icons from '@ant-design/icons'
 import Loading from './Loading'
-import { DashboardOutlined, UserOutlined, RadarChartOutlined, CloudUploadOutlined } from '@ant-design/icons'
+import { DashboardOutlined, UserOutlined, RadarChartOutlined, CloudUploadOutlined, BulbOutlined } from '@ant-design/icons'
 const Icons = {
 	DashboardOutlined,
 	UserOutlined,
 	RadarChartOutlined,
-	CloudUploadOutlined
+	CloudUploadOutlined,
+	BulbOutlined
 }
 
 const { Header, Footer, Sider, Content } = Layout
